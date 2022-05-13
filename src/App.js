@@ -11,7 +11,7 @@ const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
 //contract may 12th
-const CONTRACT_ADDRESS = "0x9e8A527E3D34C75479f7feaDa386398E7a5EE836";
+const CONTRACT_ADDRESS = "0x0F8f7558cc328806E792B45f9611Fbb491DEcf9d";
 
 const App = () => 
 {
@@ -34,6 +34,15 @@ const App = () =>
         return;
       } else {
         console.log("We have the ethereum object", ethereum);
+      }
+      /* inform user to use rinkeby*/
+      let chainId = await ethereum.request({ method: 'eth_chainId' });
+      console.log("Connected to chain " + chainId);
+
+      // String, hex code of the chainId of the Rinkebey test network
+      const rinkebyChainId = "0x4"; 
+      if (chainId !== rinkebyChainId) {
+        alert("You are not connected to the Rinkeby Test Network!");
       }
 
       /*
