@@ -3,6 +3,8 @@ import twitterLogo from './assets/twitter-logo.svg';
 import React, { useEffect , useState} from "react";
 import { ethers } from "ethers";
 import myEpicNft from './utils/MyEpicNFT.json';
+import { Dots } from 'loading-animations-react';
+
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
@@ -26,7 +28,7 @@ const App = () =>
     */
     const checkIfWalletIsConnected = async () => 
     {
-
+      <Dots text="Minting..." />
       const { ethereum } = window;
 
       if (!ethereum) {
@@ -132,9 +134,10 @@ const App = () =>
     const askContractToMintNft = async () => 
     {
 
-    
+
       try 
       {
+
         const { ethereum } = window;
     
         if (ethereum) 
@@ -144,7 +147,7 @@ const App = () =>
           const connectedContract = new ethers.Contract( CONTRACT_ADDRESS, myEpicNft.abi, signer);
           console.log("Going to pop wallet now to pay gas...")
           let nftTxn = await connectedContract.makeAnEpicNFT();
-    
+          <Dots text="Minting..." /> 
           console.log("Mining...please wait.")
           await nftTxn.wait();
           
@@ -178,14 +181,14 @@ const App = () =>
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">My NFT Collection</p>
+          <p className="header gradient-text">United Blockcahin Group NFT Minter</p>
           <p className="sub-text">
             Each unique. Each beautiful. Discover your NFT today.
           </p>
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
-            <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
+            <button onClick={ askContractToMintNft} className="cta-button connect-wallet-button">
               Mint NFT
             </button>
           )}
@@ -194,10 +197,9 @@ const App = () =>
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
             className="footer-text"
-            href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`affiliated with  United Blockchain Group`}</a>
         </div>
       </div>
     </div>
