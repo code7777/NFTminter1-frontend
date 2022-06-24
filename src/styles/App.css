@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+
 .container {
   height: 100%;
   background-color: #0d1116;
@@ -23,9 +24,20 @@
   font-weight: bold;
 }
 
+.instructions {
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .sub-text {
   font-size: 25px;
   color: white;
+  white-space: pre-line;
 }
 
 .gradient-text {

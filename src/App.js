@@ -1,5 +1,5 @@
 import './styles/App.css';
-import twitterLogo from './assets/twitter-logo.svg';
+import powerButton from './assets/power-button.svg';
 import React, { useEffect , useState} from "react";
 import { ethers } from "ethers";
 import myEpicNft from './utils/MyEpicNFT.json';
@@ -181,7 +181,7 @@ const App = () =>
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">United Blockcahin Group NFT Minter</p>
+          <p className="header gradient-text">United Blockchain Group NFT Minter</p>
           <p className="sub-text">
             Each unique. Each beautiful. Discover your NFT today.
           </p>
@@ -193,8 +193,33 @@ const App = () =>
             </button>
           )}
         </div>
+        <div className= "instructions">
+            <p>
+              To use the NFT minter you must have an EVM based cryptocurrency wallet installed in your browser such as metamask. <br></br>If you do not have a 
+              an EVM based cryptocurrency wallet go to <br></br>  https://metamask.io/download/ to download metamask. 
+              <br></br>
+              <br></br>
+              Make sure you have enough Rinkeby testnet ETH in your account to cover gas fees. <br></br> If you do not have enough funds you can get test ETH from a faucet. <br></br> 
+              Connect to your wallet using a ETH testnet and then click Mint NFT. <br></br> <br></br>
+              
+              You can see the deployed contract at  https:///rinkeby.etherscan.io/contract_address <br></br>
+              You can see the NFT at https://testnets.opensea.io/assets/contract_address/tokenID . <br></br> The tokenID will be the number of a NFT printed out.  <br></br> 
+              For example the first NFT you mint will be token 0 . The second NFT will be token 1 . 
+              <br></br>
+              <br></br>
+              You can print as many NFTs as you like. <br></br> The NFTs
+              created from the minter will be <br></br> a combination of 3 words and a random colored background , generated psuedo-randomly. 
+              <br></br>
+              <br></br>
+              Here are examples <br></br>
+              example contracts: https://rinkeby.etherscan.io/txs?a=0xAbacE65E815e9524995016dA216617ac98c57577 <br></br>
+              example NFTs: https://testnets.opensea.io/assets/rinkeby/0x0F8f7558cc328806E792B45f9611Fbb491DEcf9d/0 <br></br>
+
+            </p>
+        </div>
         <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
+
+
           <a
             className="footer-text"
             target="_blank"
